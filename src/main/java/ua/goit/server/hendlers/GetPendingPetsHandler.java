@@ -22,7 +22,6 @@ public class GetPendingPetsHandler extends AbstractHandler{
         Pet newPet = service.createNewPendingPet();
         service.addANewPet(newPet);
         List<Pet> pets = service.getPendingPets();
-        System.out.println("Pets " + pets);
         String rowTemplates = pets.stream().map(pet -> {
                     Map<String, String> params = new HashMap<>();
                     params.put("id", pet.getId().toString());

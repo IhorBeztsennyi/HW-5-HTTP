@@ -22,7 +22,6 @@ public class GetSoldPetsHandler extends AbstractHandler {
         Pet newPet = service.createNewSoldPet();
         service.addANewPet(newPet);
         List<Pet> pets = service.getSoldPets();
-        System.out.println("Pets " + pets);
         String rowTemplates = pets.stream().map(pet -> {
                     Map<String, String> params = new HashMap<>();
                     params.put("id", pet.getId().toString());
