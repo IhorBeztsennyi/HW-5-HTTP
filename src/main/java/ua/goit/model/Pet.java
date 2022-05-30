@@ -4,14 +4,14 @@ import java.util.List;
 
 public class Pet {
 
-    private Integer id;
+    private Long id;
     private Category category;
     private String name;
     private List<String> photoUrls;
     private List<Tag> tags;
     private StatusEnum status;
 
-    public Pet(Integer id, Category category, String name, List<String> photoUrls, List<Tag> tags, StatusEnum status) {
+    public Pet(Long id, Category category, String name, List<String> photoUrls, List<Tag> tags, StatusEnum status) {
         this.id = id;
         this.category = category;
         this.name = name;
@@ -23,11 +23,11 @@ public class Pet {
     public Pet() {
     }
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -69,5 +69,17 @@ public class Pet {
 
     public void setStatus(StatusEnum status) {
         this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "Pet{" +
+                "id=" + id +
+                ", category=" + category +
+                ", name='" + name + '\'' +
+                ", photoUrls=" + photoUrls +
+                ", tags=" + tags +
+                ", status=" + status +
+                '}';
     }
 }

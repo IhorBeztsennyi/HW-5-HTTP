@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HW-5-Dev Beztsennyi</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">Pet Store</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <form>
+        <div class="form-group">
+            <label for="id">Id</label>
+            <input type="text" class="form-control" value="{{id}}"
+                   id="id" placeholder="12">
+        </div>
+
+    </form>
+    <div class="row">
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="Second group">
+                <a onclick="find()" type="button" class="btn btn-primary">Find</a>
+            </div>
+        </div>
+    </div>
+    <script>
+    let id = document.getElementById('id');
+
+        function find() {
+        let body = {
+        id: id.value
+
+    }
+        fetch('/getPetById', {
+        method: 'POST',
+           body: JSON.stringify(body)
+        })
+        .then();
+        alert("Results are on the console!!!");
+        }
+    </script>
+</div>
+</body>
+</html>
